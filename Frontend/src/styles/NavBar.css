@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+  background-color: rgb(226, 207, 136);
+  height: 50px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar .logo {
+  margin-right: 420px;
+
+}
+
+.menu-items {
+  margin-left: 420px;
+}
+
+.navbar .logo h1 {
+  font-family:"inherit"; 
+  font-size: 26px; 
+  margin: 0; 
+  color: rgb(98, 75, 75);
+}
