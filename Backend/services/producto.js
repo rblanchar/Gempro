@@ -26,8 +26,8 @@ async function create(producto) {
   const binds = {
     descripcion: producto.descripcion,
     costo: producto.costo,
-    peso: producto.peso,
-    margen_ganancia: producto.margen_ganancia,
+    peso: parseFloat(producto.peso),
+    margen_ganancia: parseFloat(producto.margen_ganancia),
     cantidad: producto.cantidad,
     id_categoria: producto.id_categoria,
     id_material: producto.id_material
@@ -43,7 +43,7 @@ async function create(producto) {
 
   return { message };
 }
-//id_producto, descripcion, costo, peso, margen_ganancia, cantidad, id_categoria, id_material
+
 async function update(id_producto, descripcion, costo, peso, margen_ganancia, cantidad, id_categoria, id_material) {
   const sql = `UPDATE productos SET 
     descripcion = NVL(:descripcion, descripcion),

@@ -76,15 +76,15 @@ async function login(usuario) {
     if (!esPasswordValido) {
       return mensaje;
     }
-/*
+
     const token = jwt.sign( 
       { id_usuario: dbUser.id_usuario, nombre_usuario: dbUser.nombre_usuario }, 
       config.llaveSecreta, 
       { 
         expiresIn: "45m", 
       } ); 
-       */
-    return dbUser[1];
+       
+    return token;
 
   } catch (error) {
     console.error('Error en login:', error.message);

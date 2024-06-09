@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const factura = require('../services/factura');
+//const { createFactura } = require('../services/factura');
 const verificarToken = require('../services/authMiddleware');
 
 

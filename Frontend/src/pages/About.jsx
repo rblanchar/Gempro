@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import Navbar from "../components/NavBar";
 import "../styles/About.css";
 
 const About = () => {
-   const navigate = useNavigate();
+   //const navigate = useNavigate();
    return (
       <div>
          <Navbar />

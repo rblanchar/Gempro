@@ -29,13 +29,13 @@ const Login = () => {
   };
 
   return (
-    <div className="background1">
+    <div className="backgroundLG">
       <h1 className="title">GEMPRO</h1>
-      <div className="login-container1">
+      <div className="login-containerLG">
         <div id="mensaje">{mensaje}</div>
         <h2>Inicio de Sesión</h2>
         <form id="datos" onSubmit={handleSubmitEvent}>
-          <div className="form_control">
+          <div className="form_controlLG">
             <label htmlFor="user-name"></label>
             <input
               type="text"
@@ -46,9 +46,9 @@ const Login = () => {
               placeholder="Usuario"
               onChange={handleInput}
             />
-            <div id="user-name" className="sr-only"></div>
+            <div id="user-name" className="sr-onlyLG"></div>
           </div>
-          <div className="form_control">
+          <div className="form_controlLG">
             <label htmlFor="password"></label>
             <input
               type="password"
@@ -59,9 +59,9 @@ const Login = () => {
               placeholder="Contraseña"
               onChange={handleInput}
             />
-            <div id="user-password" className="sr-only"></div>
+            <div id="user-password" className="sr-onlyLG"></div>
           </div>
-          <button className="btn-submit">Iniciar sesión</button>
+          <button className="btn-submitLG">Iniciar sesión</button>
         </form>
       </div>
     </div>

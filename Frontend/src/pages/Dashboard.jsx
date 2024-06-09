@@ -1,10 +1,10 @@
 import React from "react";
-import { useAuth } from "../AuthProvider";
+//import { useAuth } from "../AuthProvider";
 import Navbar from "../components/NavBar";
 import '../styles/Dashboard.css';
 
 const Dashboard = () => {
-    const auth = useAuth();
+    //const auth = useAuth();
 
     return (
         <div>

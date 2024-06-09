@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.background1 {
+.backgroundLG {
     background-image: url('../../imagenes/fondo_inicio.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@ body {
     height: 100vh;
 }
 
-.login-container1 {
+.login-containerLG {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border: 1px solid #ccc;
@@ -24,7 +24,7 @@ body {
     text-align: center;
 }
 
-.form_control {
+.form_controlLG {
     margin-bottom: 20px;
 }
 
@@ -51,7 +51,7 @@ input:focus {
     outline: none;
 }
 
-.btn-submit {
+.btn-submitLG {
     background-color: #a76f06;
     color: white;
     border: none;
