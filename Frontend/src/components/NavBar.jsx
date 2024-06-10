@@ -6,19 +6,18 @@ import "../styles/NavBar.css";
 const NavBar = () => {
 
    const auth = useAuth();
-
+   
    return (
       <div>
          <nav>
             <div className="navbar">
                <div className="logo">
-                  <h1>GEMPRO</h1>
+               <NavLink to="/dashboard">
+                     <h1>JOYERIA D'LAURA</h1>
+                  </NavLink>
                </div>
                <div className="menu-items">
                   <ul>
-                     <li>
-                        <NavLink to="/dashboard">Inicio</NavLink>
-                     </li>
                      <li>
                         <NavLink to="/Categorias">Categorias</NavLink>
                      </li>

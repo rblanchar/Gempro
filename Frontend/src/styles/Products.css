@@ -1,0 +1,361 @@
+.titlePRODUCTOS {
+    padding: 0;
+    margin-left: 20px; 
+}
+
+.containerPRODCUTOS {
+    display: flex;               
+    justify-content: space-around; 
+    align-items: center;         
+    flex-wrap: wrap;             
+    margin: 5px;                
+    padding: 5px;               
+}
+
+.opcionPROD {
+    background-color: #eee8cf;   
+    padding: 80px;               
+    margin: 90px;                
+    border-radius: 8px;          
+    text-align: center;          
+    flex: 1;                    
+    min-width: 50px;            
+    max-width: 50px;             /* Aumenta el ancho máximo del contenedor */
+    display: flex;      
+    cursor: pointer;         
+    flex-direction: column;      
+    align-items: center;         
+    background-size: 100% auto;  /* Hace que la imagen tenga el 100% del ancho del contenedor y ajuste la altura automáticamente */
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 50px;               /* Ajusta la altura del contenedor */
+    position: relative;         
+}
+
+.productoTexto {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+/* relojes deportivos*/
+.reloj1 {
+    background-image: url('../../imagenes/Reloj/deportivo/1.jpg');
+}
+
+.reloj2 {
+    background-image: url('../../imagenes/Reloj/deportivo/2.jpg');
+}
+
+.reloj3 {
+    background-image: url('../../imagenes/Reloj/deportivo/3.jpg');
+}
+.reloj4 {
+    background-image: url('../../imagenes/Reloj/deportivo/4.jpg');
+}
+
+.reloj5 {
+    background-image: url('../../imagenes/Reloj/deportivo/5.jpg');
+}
+
+.reloj6 {
+    background-image: url('../../imagenes/Reloj/deportivo/6.jpg');
+}
+.reloj7 {
+    background-image: url('../../imagenes/Reloj/deportivo/7.jpg');
+}
+
+.reloj8 {
+    background-image: url('../../imagenes/Reloj/deportivo/8.jpg');
+}
+
+.reloj9 {
+    background-image: url('../../imagenes/Reloj/deportivo/9.jpg');
+}
+.reloj10 {
+    background-image: url('../../imagenes/Reloj/deportivo/10.jpg');
+}
+
+/* relojes formales*/
+.relojF1 {
+    background-image: url('../../imagenes/Reloj/formal/1.jpg');
+}
+
+.relojF2 {
+    background-image: url('../../imagenes/Reloj/formal/2.jpg');
+}
+
+.relojF3 {
+    background-image: url('../../imagenes/Reloj/formal/3.jpg');
+}
+.relojF4 {
+    background-image: url('../../imagenes/Reloj/formal/4.jpg');
+}
+
+.relojF5 {
+    background-image: url('../../imagenes/Reloj/formal/5.jpg');
+}
+
+.relojF6 {
+    background-image: url('../../imagenes/Reloj/formal/6.jpg');
+}
+.relojF7 {
+    background-image: url('../../imagenes/Reloj/formal/7.jpg');
+}
+
+.relojF8 {
+    background-image: url('../../imagenes/Reloj/formal/8.jpg');
+}
+
+.relojF9 {
+    background-image: url('../../imagenes/Reloj/formal/9.jpg');
+}
+/* cdenas de plata */
+.cadP1 {
+    background-image: url('../../imagenes/Cadenas/plata/1.jpg');
+}
+
+.cadP2 {
+    background-image: url('../../imagenes/Cadenas/plata/2.jpg');
+}
+
+.cadP3 {
+    background-image: url('../../imagenes/Cadenas/plata/3.jpg');
+}
+.cadP4 {
+    background-image: url('../../imagenes/Cadenas/plata/4.jpg');
+}
+
+.cadP5 {
+    background-image: url('../../imagenes/Cadenas/plata/5.jpg');
+}
+
+.cadP6 {
+    background-image: url('../../imagenes/Cadenas/plata/6.jpg');
+}
+
+/* cadenas de oro*/
+.cadO1 {
+    background-image: url('../../imagenes/Cadenas/oro/1.jpg');
+}
+
+.cadO2 {
+    background-image: url('../../imagenes/Cadenas/oro/2.jpg');
+}
+
+.cadO3 {
+    background-image: url('../../imagenes/Cadenas/oro/3.jpg');
+}
+.cadO4 {
+    background-image: url('../../imagenes/Cadenas/oro/4.jpg');
+}
+
+.cadO5 {
+    background-image: url('../../imagenes/Cadenas/oro/5.jpg');
+}
+
+.cadO6 {
+    background-image: url('../../imagenes/Cadenas/oro/6.jpg');
+}
+.cadO7 {
+    background-image: url('../../imagenes/Cadenas/oro/7.jpg');
+}
+.cadO8 {
+    background-image: url('../../imagenes/Cadenas/oro/8.jpg');
+}
+
+.cadO9 {
+    background-image: url('../../imagenes/Cadenas/oro/9.jpg');
+}
+
+.cadO10 {
+    background-image: url('../../imagenes/Cadenas/oro/10.jpg');
+}
+
+/*pulsera de oro*/
+.pulsO1{
+    background-image:  url('../../imagenes/Pulseras/Oro/1.jpg');
+}
+.pulsO2{
+    background-image:  url('../../imagenes/Pulseras/Oro/2.jpg');
+}
+.pulsO3{
+    background-image:  url('../../imagenes/Pulseras/Oro/3.jpg');
+}
+.pulsO4{
+    background-image:  url('../../imagenes/Pulseras/Oro/4.jpg');
+}
+.pulsO5{
+    background-image:  url('../../imagenes/Pulseras/Oro/5.jpg');
+}
+.pulsO6{
+    background-image:  url('../../imagenes/Pulseras/Oro/6.jpg');
+}
+.pulsO7{
+    background-image:  url('../../imagenes/Pulseras/Oro/7.jpg');
+}
+.pulsO8{
+    background-image:  url('../../imagenes/Pulseras/Oro/8.jpg');
+}
+.pulsO9{
+    background-image:  url('../../imagenes/Pulseras/Oro/9.jpg');
+}
+.pulsO10{
+    background-image:  url('../../imagenes/Pulseras/Oro/10.jpg');
+}
+.pulsO11{
+    background-image:  url('../../imagenes/Pulseras/Oro/11.jpg');
+}
+.pulsO12{
+    background-image:  url('../../imagenes/Pulseras/Oro/12.jpg');
+}
+/*anillos de matrimonio*/
+.anilloM1{
+    background-image:  url('../../imagenes/AnillosdeMatrimonio/1.jpg');
+}
+.anilloM2{
+    background-image:  url('../../imagenes/AnillosdeMatrimonio/2.jpg');
+}
+.anilloM3{
+    background-image:  url('../../imagenes/AnillosdeMatrimonio/3.jpg');
+}
+.anilloM4{
+    background-image:  url('../../imagenes/AnillosdeMatrimonio/4.jpg');
+}
+.anilloM5{
+    background-image:  url('../../imagenes/AnillosdeMatrimonio/5.jpg');
+}
+.anilloM6{
+    background-image:  url('../../imagenes/AnillosdeMatrimonio/6.jpg');
+}
+.anilloM7{
+    background-image:  url('../../imagenes/AnillosdeMatrimonio/7.jpg');
+}
+.anilloM8{
+    background-image:  url('../../imagenes/AnillosdeMatrimonio/8.jpg');
+}
+/*anillos solitarios con piedras*/
+.anilloSP1{
+    background-image:  url('../../imagenes/AnilloSolitarios/piedras/1.jpg');
+}
+.anilloSP2{
+    background-image:  url('../../imagenes/AnilloSolitarios/piedras/2.jpg');
+}
+.anilloSP3{
+    background-image:  url('../../imagenes/AnilloSolitarios/piedras/3.jpg');
+}
+.anilloSP4{
+    background-image:  url('../../imagenes/AnilloSolitarios/piedras/4.jpg');
+}
+.anilloSP5{
+    background-image:  url('../../imagenes/AnilloSolitarios/piedras/5.jpg');
+}
+.anilloSP6{
+    background-image:  url('../../imagenes/AnilloSolitarios/piedras/6.jpg');
+}
+.anilloSP7{
+    background-image:  url('../../imagenes/AnilloSolitarios/piedras/7.jpg');
+}
+.anilloSP8{
+    background-image:  url('../../imagenes/AnilloSolitarios/piedras/8.jpg');
+}
+/*dijes de oro*/
+.dijeO1{
+    background-image:  url('../../imagenes/Dijes/oro/1.jpg');
+}
+.dijeO2{
+    background-image:  url('../../imagenes/Dijes/oro/2.jpg');
+}
+.dijeO3{
+    background-image:  url('../../imagenes/Dijes/oro/3.jpg');
+}
+.dijeO4{
+    background-image:  url('../../imagenes/Dijes/oro/4.jpg');
+}
+.dijeO5{
+    background-image:  url('../../imagenes/Dijes/oro/5.jpg');
+}
+.dijeO6{
+    background-image:  url('../../imagenes/Dijes/oro/6.jpg');
+}
+.dijeO7{
+    background-image:  url('../../imagenes/Dijes/oro/7.jpg');
+}
+.dijeO8{
+    background-image:  url('../../imagenes/Dijes/oro/8.jpg');
+}
+.dijeO9{
+    background-image:  url('../../imagenes/Dijes/oro/9.jpg');
+}
+.dijeO10{
+    background-image:  url('../../imagenes/Dijes/oro/10.jpg');
+}
+.dijeO11{
+    background-image:  url('../../imagenes/Dijes/oro/11.jpg');
+}
+.dijeO12{
+    background-image:  url('../../imagenes/Dijes/oro/12.jpg');
+}
+/*dijes de plata*/
+.dijeP1{
+    background-image:  url('../../imagenes/Dijes/plata/1.jpg');
+}
+.dijeP2{
+    background-image:  url('../../imagenes/Dijes/plata/2.jpg');
+}
+.dijeP3{
+    background-image:  url('../../imagenes/Dijes/plata/3.jpg');
+}
+.dijeP4{
+    background-image:  url('../../imagenes/Dijes/plata/4.jpg');
+}
+.dijeP5{
+    background-image:  url('../../imagenes/Dijes/plata/5.jpg');
+}
+/*aretes de oro*/
+.areteO1{
+    background-image:  url('../../imagenes/Aretes/oro/1.jpeg');
+}
+.areteO2{
+    background-image:  url('../../imagenes/Aretes/oro/2.jpg');
+}
+.areteO3{
+    background-image:  url('../../imagenes/Aretes/oro/3.jpg');
+}
+.areteO4{
+    background-image:  url('../../imagenes/Aretes/oro/4.jpg');
+}
+.areteO5{
+    background-image:  url('../../imagenes/Aretes/oro/5.jpg');
+}
+.areteO6{
+    background-image:  url('../../imagenes/Aretes/oro/6.jpg');
+}
+.areteO7{
+    background-image:  url('../../imagenes/Aretes/oro/7.jpg');
+}
+.areteO8{
+    background-image:  url('../../imagenes/Aretes/oro/8.jpg');
+}
+.areteO9{
+    background-image:  url('../../imagenes/Aretes/oro/9.jpg');
+}
+.areteO10{
+    background-image:  url('../../imagenes/Aretes/oro/10.jpg');
+}
+.areteO11{
+    background-image:  url('../../imagenes/Aretes/oro/11.jpg');
+}
+
+/*****producto seleccionado*/
+.imagenProdSelecionado {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px auto;
+  }

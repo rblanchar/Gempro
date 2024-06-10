@@ -5,6 +5,7 @@
   padding: 0px 10px;
   background-color: rgb(226, 207, 136);
   height: 50px;
+  z-index: 1000;
 }
 
 .navbar ul {
@@ -20,7 +21,6 @@
 
 .navbar .logo {
   margin-right: 420px;
-
 }
 
 .menu-items {
@@ -28,8 +28,21 @@
 }
 
 .navbar .logo h1 {
-  font-family:"inherit"; 
-  font-size: 26px; 
-  margin: 0; 
+  font-family: "inherit";
+  font-size: 26px;
+  margin: 0;
   color: rgb(98, 75, 75);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.navbar a:visited {
+  color: inherit;
+}
+
+.navbar a.active {
+  font-weight: bold;
 }

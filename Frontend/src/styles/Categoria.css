@@ -1,7 +1,6 @@
 .titleP {
-
     padding: 0;
-    margin-left: 135px; 
+    margin-left: 20px; 
 }
 
 .containerCategorias {
@@ -9,16 +8,69 @@
     justify-content: space-around; 
     align-items: center;         
     flex-wrap: wrap;             
-    margin: 20px;                
-    padding: 50px;               
+    margin: 5px;                
+    padding: 5px;               
 }
 
-.opcionP {
+.opcionC {
     background-color: #eee8cf;   
-    padding: 160px;               
-    margin: 10px;                
+    padding: 80px;               
+    margin: 15px;                
     border-radius: 8px;          
     text-align: center;          
     flex: 1;                    
-    min-width: 50px;            
+    min-width: 200px;            
+    max-width: 400px;             
+    display: flex;               
+    flex-direction: column;      
+    align-items: center;         
+    background-size: 100% auto;  
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 310px;               
+    position: relative;         
+}
+
+.categoriaTexto {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.relojesD {
+    background-image: url('../../imagenes/Reloj/deportivo/Principal.jpg');
+}
+.relojesF {
+    background-image: url('../../imagenes/Reloj/formal/principal.jpg');
+}
+.cadenasO {
+    background-image: url('../../imagenes/Cadenas/oro/Principal.jpg');
+}
+.cadenasP {
+    background-image: url('../../imagenes/Cadenas/plata/principal.jpg');
+}
+.pulseras {
+    background-image: url('../../imagenes/Pulseras/Oro/principal.jpg');
+}
+
+.anillosSolitarios {
+    background-image: url('../../imagenes/AnilloSolitarios/piedras/principal.jpg');
+}
+
+.anillosMatrimonio {
+    background-image: url('../../imagenes/AnillosdeMatrimonio/principal.jpg');
+}
+
+.dijesO {
+    background-image: url('../../imagenes/Dijes/oro/principal.jpg');
+}
+.dijesP {
+    background-image: url('../../imagenes/Dijes/plata/principal.jpg');
+}
+.aretes {
+    background-image: url('../../imagenes/Aretes/oro/principal.jpeg');
 }
