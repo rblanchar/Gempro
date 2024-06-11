@@ -71,20 +71,20 @@ async function login(usuario) {
       return mensaje;
     }
 
-    const esPasswordValido = await bcrypt.compare(usuario.contrasena, dbUser[2]);
+    const esPasswordValido = await bcrypt.compare(usuario.contrasena, dbUser.CONTRASENA);
 
     if (!esPasswordValido) {
       return mensaje;
     }
 
     const token = jwt.sign( 
-      { id_usuario: dbUser.id_usuario, nombre_usuario: dbUser.nombre_usuario }, 
+      { id_usuario: dbUser.id_usuario, nombre_usuario: dbUser.NOMBRE_USUARIO }, 
       config.llaveSecreta, 
       { 
         expiresIn: "45m", 
       } ); 
        
-    return token;
+    return {token, nombre_usuario: dbUser.NOMBRE_USUARIO};
 
   } catch (error) {
     console.error('Error en login:', error.message);

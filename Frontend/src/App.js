@@ -23,6 +23,8 @@ import ProductosDijesOro from "./pages/ProductosDijesOro.jsx";
 import ProductosDijesPlata from "./pages/ProductosDijesPlata.jsx";
 import ProductosAretesOro from "./pages/ProductosAretesOro.jsx";
 import ProductoSeleccionado from "./pages/ProductoSeleccionado.jsx";
+import Carrito from "./pages/Carrito.jsx";
+import RegisterFactura from "./pages/RegisterFactura.jsx";
 import './styles/Login.css';
 
 
@@ -56,6 +58,8 @@ function App() {
             <Route path="/productos/dijes/plata" element={<ProductosDijesPlata />} />
             <Route path="/productos/aretes/oro" element={<ProductosAretesOro />} />
             <Route path="/productoSeleccionado" element={<ProductoSeleccionado />} />
+            <Route path="/register/factura" element={<RegisterFactura />} />
+            <Route path="/carrito" element={<Carrito />} />
           </Route>
         </Routes>
       </AuthProvider>

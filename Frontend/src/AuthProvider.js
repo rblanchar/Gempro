@@ -35,9 +35,9 @@ const AuthProvider = ({ children }) => {
         mensaje = e.mensaje;
         return mensaje;
       } else {
-        setUser(data.username);
-        setToken(data.password);
-        localStorage.setItem("site", data.password);
+        setUser(e.nombre_usuario);
+        setToken(e.token);
+        localStorage.setItem("site", e.token);
         navigate("dashboard");
       }
     })};

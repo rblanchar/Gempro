@@ -1,0 +1,49 @@
+1)Descripción: Cadena Bernandino 
+Peso: 5 gr 
+Material: Oro 18K
+Precio: $150.000
+
+2)Descripción: Cadena Bisenti 
+Peso: 8 gr 
+Material: Oro 18K
+Precio: $180.000
+
+3)Descripción: Cadena cosine eslabones barbados 
+Peso: 4.3 gr 
+Material: Oro 18K
+Precio: $110.000
+
+4)Descripción: Cadena gergia 
+Peso: 5 gr 
+Material: Oro 18K
+Precio: $250.000
+
+5)Descripción: Cadena Joliet 
+Peso: 3,6 gr 
+Material: Oro 18K
+Precio: $115.000
+
+6)Descripción: Cadena muriel 
+Peso: 4,5 gr 
+Material: Oro 18K
+Precio: $160.000
+
+7)Descripción: Cadena oxnard 
+Peso: 9 gr 
+Material: Oro 18K
+Precio: $250.000
+
+8)Descripción: Cadena cartier 
+Peso: 6 gr 
+Material: Oro 14K
+Precio: $200.000
+
+9)Descripción: Cadena singapur 
+Peso: 2,5 gr 
+Material: Oro 18K
+Precio: $120.000
+
+10)Descripción: Cadena Eslabon Cubano 
+Peso: 12 gr 
+Material: Oro 14K
+Precio: $250.000

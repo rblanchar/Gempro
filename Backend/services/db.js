@@ -7,7 +7,7 @@ async function query(sql, params) {
 
     connection = await oracledb.getConnection(config.db);
 
-    const result = await connection.execute(sql, params, { autoCommit: true });
+    const result = await connection.execute(sql, params, { autoCommit: true , outFormat: oracledb.OUT_FORMAT_OBJECT });
    
     return result;
    

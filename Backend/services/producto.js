@@ -2,18 +2,15 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
-async function getMultiple(page = 1){
-  const offset = helper.getOffset(page, config.listPerPage);
+async function getMultiple() {
   const rows = await db.query(
-    `SELECT * FROM productos ORDER BY id_producto OFFSET ${offset} ROWS FETCH NEXT ${config.listPerPage} ROWS ONLY`, []
+    `SELECT * FROM productos ORDER BY id_producto`, []
   );
   const data = helper.emptyOrRows(rows.rows);
-  //const meta = {page};
 
   return {
-    data,
-    //meta
-  }
+    data
+  };
 }
 
 
