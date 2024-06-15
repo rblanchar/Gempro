@@ -80,11 +80,11 @@ async function login(usuario) {
     const token = jwt.sign( 
       { id_usuario: dbUser.id_usuario, nombre_usuario: dbUser.NOMBRE_USUARIO }, 
       config.llaveSecreta, 
-      { 
+      /*{ 
         expiresIn: "45m", 
-      } ); 
+      }*/ ); 
        
-    return {token, nombre_usuario: dbUser.NOMBRE_USUARIO};
+    return {token/*, nombre_usuario: dbUser.NOMBRE_USUARIO*/};
 
   } catch (error) {
     console.error('Error en login:', error.message);

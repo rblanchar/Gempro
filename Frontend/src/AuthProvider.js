@@ -1,5 +1,6 @@
 import { useContext, createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { limpiarCarrito } from "./components/LimpiarCarrito";
 
 const AuthContext = createContext();
 
@@ -58,6 +59,7 @@ const AuthProvider = ({ children }) => {
     setUser(null);
     setToken("");
     localStorage.removeItem("site");
+    limpiarCarrito();
     navigate("/login");
   };
 

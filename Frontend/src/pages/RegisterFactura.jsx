@@ -14,10 +14,10 @@ const RegisterFactura = () => {
         subtotal: total,
         total_pagar: total
     });
-
+/* justo aqui */
     const [mensaje, setMensaje] = useState("");
     const auth = useAuth();
-
+    console.log("ojo" + auth.user);
     const handleSubmitEvent = async (e) => {
         e.preventDefault();
 

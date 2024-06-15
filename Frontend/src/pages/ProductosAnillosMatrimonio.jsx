@@ -19,15 +19,15 @@ const ProductosAnillosMatrimonio = () => {
     })
       .then((res) => res.json())
       .then((datos) => {
-        const productosFiltrados = datos.data.filter(producto => producto.ID_CATEGORIA === '204');
+        const productosFiltrados = datos.data.filter(producto => ((producto.ID_CATEGORIA === '204')&& producto.CANTIDAD>0));
         setProductos(productosFiltrados);
       })
       .catch((error) => console.error("Error fetching products:", error));
   }, [auth.token]);
 
-  const handleImageClick = (className, productName, imageUrl, costo) => {
+  const handleImageClick = (idProduct, productName, imageUrl, costo, cantidad, margen_ganancia) => {
     navigate("/productoSeleccionado", {
-      state: { className, productName, imageUrl, costo }
+      state: { idProduct, productName, imageUrl, costo, cantidad, margen_ganancia }
     });
   };
 
@@ -40,7 +40,8 @@ const ProductosAnillosMatrimonio = () => {
           <div
             key={producto.ID_PRODUCTO}
             className="opcionPROD"
-            onClick={() => handleImageClick(`${producto.ID_PRODUCTO}`, producto.DESCRIPCION, `${process.env.REACT_APP_URL_IMG}${producto.IMAGEN}`, producto.COSTO)}
+            onClick={() => handleImageClick(`${producto.ID_PRODUCTO}`, producto.DESCRIPCION, `${process.env.REACT_APP_URL_IMG}${producto.IMAGEN}`, 
+              producto.COSTO, producto.CANTIDAD, producto.MARGEN_GANANCIA)}
           >
             <img 
               className="imagenProdSelecionado" 

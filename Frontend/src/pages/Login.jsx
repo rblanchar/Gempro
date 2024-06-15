@@ -12,14 +12,14 @@ const Login = () => {
 
   const handleSubmitEvent = (e) => {
     e.preventDefault();
-    if (input.username !== "" && input.password !== "") {
-      auth.loginAction(input);
+    if (input.username !== "" && input.password !== "") {    
       setMensaje("Usuario y contraseña incorrectos");
+      auth.loginAction(input);
       return;
     }
     alert("El usuario y la contraseña son obligatorios");
   };
-
+  
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInput((prev) => ({
