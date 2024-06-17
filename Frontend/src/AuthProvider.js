@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
         setUser({ ...response.usuario, tipo: "usuario" });
         setToken(response.token);
         localStorage.setItem("site", response.token);
-        //console.log("Usuario logeado:", response.usuario);
+        console.log("Usuario logeado:", response.usuario);
         navigate("/dashboard");
         return;
       }
@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
         setUser({ ...response.cliente, tipo: "cliente" });
         setToken(response.token);
         localStorage.setItem("site", response.token);
-        //console.log("Cliente logeado:", response.cliente);
+        console.log("Cliente logeado:", response.cliente);
         navigate("/dashboard");
         return;
       }
