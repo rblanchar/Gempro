@@ -19,22 +19,22 @@ async function getMultiple(page = 1) {
 }
 
 async function getById(id_cliente) {
-    const sql = `SELECT * FROM clientes WHERE id_cliente = :id_cliente`;
-  
-    const binds = { id_cliente: id_cliente };
-    const result = await db.query(sql, binds);
-  
-    let message = 'Error in retrieving the Client';
-  
-    if (result && result.rows.length > 0) {
-      return result.rows[0];
-    } else {
-      return { message };
-    }
+  const sql = `SELECT * FROM clientes WHERE id_cliente = :id_cliente`;
+
+  const binds = { id_cliente: id_cliente };
+  const result = await db.query(sql, binds);
+
+  let message = 'Error in retrieving the Client';
+
+  if (result && result.rows.length > 0) {
+    return result.rows[0];
+  } else {
+    return { message };
   }
+}
 
 async function create(cliente) {
-    const plainPassword = await bcrypt.hash(cliente.contrasena, 10);
+  const plainPassword = await bcrypt.hash(cliente.contrasena, 10);
   const sql = `
     INSERT INTO clientes (id_cliente, cedula, nombre, apellidos, direccion, barrio, correo, telefono, nombre_usuario, contrasena, id_tipo) 
     VALUES (seq_id_cliente.NEXTVAL, :cedula, :nombre, :apellidos, :direccion, :barrio, :correo, :telefono, :nombre_usuario, :contrasena, :id_tipo)
@@ -60,8 +60,7 @@ async function create(cliente) {
 async function login(cliente) {
   try {
     const result = await db.query(
-      `SELECT id_cliente ,nombre_usuario, contrasena FROM clientes 
-      WHERE nombre_usuario = :nombre_usuario`,
+      `SELECT * FROM clientes WHERE nombre_usuario = :nombre_usuario`,
       [cliente.nombre_usuario]
     );
 
@@ -72,27 +71,28 @@ async function login(cliente) {
       return mensaje;
     }
 
-    const esPasswordValido = await bcrypt.compare(cliente.contrasena, dbUser[2]);
+    const esPasswordValido = await bcrypt.compare(cliente.contrasena, dbUser.CONTRASENA);
 
     if (!esPasswordValido) {
       return mensaje;
     }
 
-    const token = jwt.sign( 
-      { id_cliente: dbUser.id_cliente, nombre_usuario: dbUser.nombre_usuario }, 
-      config.llaveSecreta, 
-      { 
-        expiresIn: "15m", 
-      } ); 
-    return token;
+    const token = jwt.sign(
+      { id_cliente: dbUser.id_cliente, nombre_usuario: dbUser.NOMBRE_USUARIO },
+      config.llaveSecreta,
+      /*{
+        expiresIn: "15m",
+      }*/);
+    return {token,
+    cliente: dbUser};
 
   } catch (error) {
     console.error('Error en login:', error.message);
     throw error;
   }
 
- 
-  
+
+
 }
 
 async function update(id_cliente, cedula, nombre, apellidos, direccion, barrio, correo, telefono, nombre_usuario, contrasena, id_tipo) {

@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const producto = require('../services/producto');
-const verificarToken = require('../services/authMiddleware');
+//const verificarToken = require('../services/authMiddleware');
 
-router.get('/', verificarToken, async function(req, res, next) {
+router.get('/', /*verificarToken,*/ async function(req, res, next) {
   try {
     res.json(await producto.getMultiple(req.query.page));
   } catch (err) {

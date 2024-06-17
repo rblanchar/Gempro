@@ -1,13 +1,16 @@
-.TitleAbout {
 
-    padding: 0;
-    margin-left: 150px; 
+.TitleAbout {
+    padding: 0px 5px;
 }
 
 .containerA1 {
-    max-width: 1200px;           
-    margin: 0 auto;            
-    padding: 0px 20px;             
+    max-width: auto;           
+    margin-left: 50px; 
+    margin-right: 50px;          
+    padding: 0px 5px;             
+}
+.containerA1 p{
+    margin-left: 10px;
 }
 
 .containerA1 p {

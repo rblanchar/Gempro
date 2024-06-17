@@ -22,7 +22,7 @@ async function getById(id_factura) {
     return { message };
   }
 }
-
+/*
 async function create(detallefactura) {
   const sql = `INSERT INTO detalle_facturas (id_factura, id_producto, cantidad, valor_unitario, iva, valor_total)
                 VALUES (:v_id_factura, :v_id_producto, :v_cantidad, :v_valUnitario, :v_iva, :v_valTotal)`;
@@ -41,6 +41,47 @@ async function create(detallefactura) {
 
   return { message };
 }
+*/
+async function getNextInvoiceId() {
+  const sql = `SELECT last_number - 1 AS last_number FROM USER_SEQUENCES WHERE sequence_name = 'SEQ_ID_FACTURA'`;
+  const result = await db.query(sql, []);
+  const data = result.rows[0].LAST_NUMBER;
+
+  return data;
+}
+
+
+async function create(detallefactura) {
+  try {
+
+    const nextNumber = await getNextInvoiceId();
+    const sqlInsert = `INSERT INTO detalle_facturas (id_factura, id_producto, cantidad, valor_unitario, iva, valor_total)
+                       VALUES (:v_id_factura, :v_id_producto, :v_cantidad, :v_valUnitario, :v_iva, :v_valTotal)`;
+
+    const binds = {
+      v_id_factura: nextNumber,
+      v_id_producto: detallefactura.id_producto,
+      v_cantidad: detallefactura.cantidad,
+      v_valUnitario: detallefactura.valor_unitario,
+      v_iva: detallefactura.iva,
+      v_valTotal: detallefactura.valor_total
+    };
+
+    const resultInsert = await db.query(sqlInsert, binds);
+
+    let message = 'Error al crear el detalle de la factura';
+
+    if (resultInsert && resultInsert.rowsAffected && resultInsert.rowsAffected > 0) {
+      message = 'Detalle de factura creado con éxito';
+    }
+
+    return { message };
+  } catch (error) {
+    console.error('Error al crear el detalle de la factura:', error.message);
+    throw error;
+  }
+}
+
 
 async function remove(id_factura) {
     const sql = `DELETE FROM detalle_facturas WHERE id_factura= :id_factura`;

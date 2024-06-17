@@ -1,32 +1,63 @@
 import React from "react";
-//import { useAuth } from "../AuthProvider";
 import Navbar from "../components/NavBar";
 import '../styles/Dashboard.css';
 
 const Dashboard = () => {
-    //const auth = useAuth();
-
     return (
         <div>
             <Navbar />
-            <h3 className="titleH3">MAS VENDIDOS {/* {auth.user} */}</h3>
-            <div className="wrapper">
-                <div className="container2">
-                    <ul className="options-list">
-                        <li>DIJE ARBOL DE LA VIDA</li>
-                    </ul>
+            <div className="imagePublicidad1-container">
+                <div className="columna-1">
+                    <div className="contenido-columna">
+                        <p><b><em>Elegancia y Fe en Cada Pieza</em></b></p>
+                    </div>
                 </div>
-                <div className="container3">
-                    <ul className="options-list">
-                        <li>DIJE CRISTO</li>
-                    </ul>
-                </div>
-                <div className="container4">
-                    <ul className="options-list">
-                        <li>DIJE ANCLA</li>
-                    </ul>
+                <div className="columna-2">
+                    <div className="contenido-columna">
+                        <p><b><em>Tu Reflejo en Cada Joya</em></b></p>
+                    </div>
                 </div>
             </div>
+            <div className="imagePublicidad3-container">
+                <div className="columna-3">
+                    <div className="contenido-columna">
+                        <p><b><em>Uniendo Sueños, Sellando Amor</em></b></p>
+                    </div>
+                </div>
+                <div className="columna-4">
+                    <div className="contenido-columna">
+                        <p><b><em>Elegancia que Enamora</em></b></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div className="imagePublicidad2-container">
+                <img className="discount-imagePublicidad2"/>
+                <div className="mensaje">
+                    <p><b><em>Encantos que Brillan Contigo</em></b></p>
+                </div>
+            </div>
+
+            <footer className="footer">
+                <div className="footer-column">
+                    <h4>Sobre Nuestra Joyería</h4>
+                    <p>Ofrecemos una amplia variedad de joyas de alta calidad y accesorios, diseñadas para cada ocasión. Visítanos para descubrir piezas únicas y atemporales.</p>
+                    <p>Envío seguro a todo colombia</p>
+                    <p>Telefono: +57 310 408 66 85 /  +57 312 519 79 07</p>
+                    <p>Email: rblanchar@unicesar.edu.co</p>
+                </div>
+                <div className="footer-column">
+                    <h4>Síguenos en</h4>
+                    <div className="social-icons">
+                        <a href="https://facebook.com"><img src="../../imagenes/Social/facebook.png" alt="Facebook" /></a>
+                        <a href="https://instagram.com"><img src="../../imagenes/Social/instagram.png" alt="Instagram" /></a>
+                        <a href="https://twitter.com"><img src="../../imagenes/Social/twitter.jpg" alt="Twitter" /></a>
+                    </div>
+                </div>
+            </footer>
+
+
+
         </div>
     );
 };

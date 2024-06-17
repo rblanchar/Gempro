@@ -56,3 +56,134 @@
     border-radius: 4px;            
     font-weight: bold;
 }
+/* de aqui en adelante MENA*/
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-column {
+    width: 45%;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+/* Imagen de descuento */
+
+.discount-imageDescuento {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 570px;
+}
+
+/* Imagen de publicidad 1 */
+.imagePublicidad1-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+/* Columnas de publicidad */
+.columna-1, .columna-2, .columna-3, .columna-4 {
+    width: 45%; /* Ancho de cada columna */
+    background-color: rgb(107, 105, 105); /* Color de fondo para demostración */
+    margin-top: 50px;
+    position: relative; /* Posición relativa para posicionar el contenido */
+}
+.contenido-columna {
+    position: absolute;
+    bottom: 20px; /* Ajusta la distancia del contenido al borde inferior */
+    left: 50%; /* Centra el contenido horizontalmente */
+    transform: translateX(-50%); /* Centra el contenido horizontalmente */
+    background-color: rgba(253, 242, 242, 0.8); /* Fondo del contenido */
+    padding: 10px;
+    text-align: center;
+    width: 90%; /* Ancho del contenido */
+}
+
+.columna-1 {
+    background-image: url('../../imagenes/DashboardImagenes/Publicidad1.png');
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+}
+
+.columna-2 {
+    width: 40%;
+    height: 400px;
+    background-image: url('../../imagenes/DashboardImagenes/Publicidad2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.imagePublicidad2-container {
+    background-image: url('../../imagenes/DashboardImagenes/Publicidad6.png');
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    position: relative; /* Posición relativa para posicionar el mensaje */
+    height: 600px; /* Altura del contenedor */
+}
+
+.discount-imagePublicidad2 {
+    max-width: 100%;
+    height: auto;
+
+}
+.mensaje {
+    position: absolute;
+    bottom: 20px; /* Ajusta la distancia del mensaje al borde inferior */
+    left: 50%; /* Centra el mensaje horizontalmente */
+    transform: translateX(-50%); /* Centra el mensaje horizontalmente */
+    background-color: rgba(253, 242, 242, 0.8); /* Fondo del mensaje */
+    padding: 10px;
+    text-align: center;
+    width: 70%; /* Ancho del mensaje */
+}
+
+.imagePublicidad3-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.columna-3, .columna-4 {
+    width: 45%; /* Ancho de cada columna */
+    background-color: rgb(107, 105, 105); /* Color de fondo para demostración */
+    margin-top: relative;
+}
+
+.columna-3 {
+    background-image: url('../../imagenes/DashboardImagenes/Publicidad8.png');
+    height: 400px; 
+}
+
+.columna-4 {
+    margin-top: 20px;
+    width: 40%; 
+    
+    height: 800px;
+    background-image: url('../../imagenes/DashboardImagenes/Publicidad9.png');
+}

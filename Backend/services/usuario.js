@@ -59,8 +59,7 @@ async function create(usuario) {
 async function login(usuario) {
   try {
     const result = await db.query(
-      `SELECT id_usuario, nombre_usuario, contrasena FROM usuarios 
-      WHERE nombre_usuario = :nombre_usuario`,
+      `SELECT * FROM usuarios WHERE nombre_usuario = :nombre_usuario`,
       [usuario.nombre_usuario]
     );
 
@@ -77,22 +76,22 @@ async function login(usuario) {
       return mensaje;
     }
 
-    const token = jwt.sign( 
-      { id_usuario: dbUser.id_usuario, nombre_usuario: dbUser.NOMBRE_USUARIO }, 
-      config.llaveSecreta, 
-      /*{ 
-        expiresIn: "45m", 
-      }*/ ); 
-       
-    return {token/*, nombre_usuario: dbUser.NOMBRE_USUARIO*/};
+    const token = jwt.sign(
+      { id_usuario: dbUser.id_usuario, nombre_usuario: dbUser.NOMBRE_USUARIO },
+      config.llaveSecreta,
+      // Configura opciones adicionales si es necesario, como expiresIn
+      //{ expiresIn: "45m" }
+    );
+
+    return {
+      token,
+      usuario: dbUser
+    };
 
   } catch (error) {
     console.error('Error en login:', error.message);
     throw error;
   }
-
- 
-  
 }
 
 async function update(id_usuario, cedula, nombre, apellidos, direccion, barrio, correo, telefono, nombre_usuario, contrasena, id_tipo) {

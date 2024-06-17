@@ -167,6 +167,7 @@
     color: white;
     margin-left: 195px;
 }
+
 .btn-submitCarritoCompra:hover,
 .btn-submitImgSel:hover {
     background-color: #f4a20a;
@@ -191,7 +192,18 @@
 }
 
 .tablaCarrito {
-    margin-left: 100px;
+    margin-left: 130px;
     border-collapse: collapse;
     /* Asegurar que los bordes no se dupliquen */
+}
+
+.buttonEliProdCarr {
+    background-color: rgba(174, 168, 168, 0.5);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.buttonEliProdCarr:hover{
+    background-color: rgba(0,0,0,0.5);
 }

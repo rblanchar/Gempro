@@ -1,51 +1,45 @@
-import AuthProvider from "./AuthProvider";
 import { Route, Routes } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
 import PrivateRoute from "./PrivateRoute";
+import AuthProvider from "./AuthProvider";
+import ScrollToTop from "./components/ScrollToTop";
+import { CarritoProvider } from "./components/CarritoContext";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import Categorias from "./pages/Categorias"
-import About from "./pages/About"
+import Categorias from "./pages/Categorias";
+import About from "./pages/About";
 import RegisterMaterial from "./pages/RegisterMaterial";
 import RegisterTipoUsuario from "./pages/RegisterTipoUsuario";
 import RegisterCategoria from "./pages/RegisterCategoria";
 import RegisterProduct from "./pages/RegisterProduct";
 import RegisterUsuario from "./pages/RegisterUsuario";
 import RegisterCliente from "./pages/RegisterCliente";
-import ProductosRelojesDeportivos from "./pages/ProductosRelojesDeportivos.jsx";
-import ProductosRelojesFormales from "./pages/ProductosRelojesFormales.jsx";
-import ProductosCadenasOro from "./pages/ProductosCadenasOro.jsx";
-import ProductosCadenasPlata from "./pages/ProductosCadenasPlata.jsx";
-import ProductosPulserasOro from "./pages/ProductosPulserasOro.jsx";
-import ProductosAnillosMatrimonio from "./pages/ProductosAnillosMatrimonio.jsx";
-import ProductosAnillosSolitarioPiedras from "./pages/ProductosAnillosSolitarioPiedras.jsx";
-import ProductosDijesOro from "./pages/ProductosDijesOro.jsx";
-import ProductosDijesPlata from "./pages/ProductosDijesPlata.jsx";
-import ProductosAretesOro from "./pages/ProductosAretesOro.jsx";
-import ProductoSeleccionado from "./pages/ProductoSeleccionado.jsx";
-import Carrito from "./pages/Carrito.jsx";
-import RegisterFactura from "./pages/RegisterFactura.jsx";
+import ProductosRelojesDeportivos from "./pages/ProductosRelojesDeportivos";
+import ProductosRelojesFormales from "./pages/ProductosRelojesFormales";
+import ProductosCadenasOro from "./pages/ProductosCadenasOro";
+import ProductosCadenasPlata from "./pages/ProductosCadenasPlata";
+import ProductosPulserasOro from "./pages/ProductosPulserasOro";
+import ProductosAnillosMatrimonio from "./pages/ProductosAnillosMatrimonio";
+import ProductosAnillosSolitarioPiedras from "./pages/ProductosAnillosSolitarioPiedras";
+import ProductosDijesOro from "./pages/ProductosDijesOro";
+import ProductosDijesPlata from "./pages/ProductosDijesPlata";
+import ProductosAretesOro from "./pages/ProductosAretesOro";
+import ProductoSeleccionado from "./pages/ProductoSeleccionado";
+import Carrito from "./pages/Carrito";
+import RegisterFactura from "./pages/RegisterFactura";
 import './styles/Login.css';
-
 
 function App() {
   return (
     <div className="App">
       <ScrollToTop />
-      <AuthProvider>
-        <Routes>
-        
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route element={<PrivateRoute />}>
+      <CarritoProvider>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/Categorias" element={<Categorias />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/about" element={<About />} />
-            <Route path="/register/material" element={<RegisterMaterial />} />
-            <Route path="/register/tipoUsuario" element={<RegisterTipoUsuario />} />
-            <Route path="/register/categoria" element={<RegisterCategoria />} />
-            <Route path="/register/producto" element={<RegisterProduct />} />
-            <Route path="/register/usuario" element={<RegisterUsuario />} />
+            <Route path="/Categorias" element={<Categorias />} />
             <Route path="/register/cliente" element={<RegisterCliente />} />
             <Route path="/productos/relojes/deportivos" element={<ProductosRelojesDeportivos />} />
             <Route path="/productos/relojes/formales" element={<ProductosRelojesFormales />} />
@@ -58,12 +52,18 @@ function App() {
             <Route path="/productos/dijes/plata" element={<ProductosDijesPlata />} />
             <Route path="/productos/aretes/oro" element={<ProductosAretesOro />} />
             <Route path="/productoSeleccionado" element={<ProductoSeleccionado />} />
-            <Route path="/register/factura" element={<RegisterFactura />} />
-            <Route path="/carrito" element={<Carrito />} />
-          </Route>
-        </Routes>
-      </AuthProvider>
-
+            <Route element={<PrivateRoute />}>
+              <Route path="/register/material" element={<RegisterMaterial />} />
+              <Route path="/register/tipoUsuario" element={<RegisterTipoUsuario />} />
+              <Route path="/register/categoria" element={<RegisterCategoria />} />
+              <Route path="/register/producto" element={<RegisterProduct />} />
+              <Route path="/register/usuario" element={<RegisterUsuario />} />
+              <Route path="/register/factura" element={<RegisterFactura />} />
+              <Route path="/carrito" element={<Carrito />} />
+            </Route>
+          </Routes>
+        </AuthProvider>
+      </CarritoProvider>
     </div>
   );
 }

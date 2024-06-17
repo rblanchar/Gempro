@@ -1,70 +1,78 @@
-import { useContext, createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { limpiarCarrito } from "./components/LimpiarCarrito";
+import { useCarrito } from "./components/CarritoContext";
 
 const AuthContext = createContext();
 
-const login = async function (data) {
-  const usuario = {nombre_usuario: data.username, contrasena: data.password};
+const loginU = async function (data) {
+  const usuario = { nombre_usuario: data.username, contrasena: data.password };
   const response = await fetch("http://localhost:3000/usuario/login", {
     method: "POST",
-    mode: "cors",
-    cache: "no-cache", 
-    credentials: "same-origin",  
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET,POST,OPTIONS,DELETE,PUT",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(usuario),
   });
-   return response.json();
+  return response.json();
 };
 
+const loginC = async function (data) {
+  const cliente = { nombre_usuario: data.username, contrasena: data.password };
+  const response = await fetch("http://localhost:3000/cliente/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(cliente),
+  });
+  return response.json();
+};
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("site") || "");
   const navigate = useNavigate();
+  const { limpiarCarrito } = useCarrito();
 
-  const loginAction = (data) => {
-    let mensaje = "";
-    const message = login(data);
-    message.then((e) => {
-      if (e.mensaje) {
-        mensaje = e.mensaje;
-        return mensaje;
-      } else {
-        setUser(e.nombre_usuario);
-        setToken(e.token);
-        localStorage.setItem("site", e.token);
-        navigate("dashboard");
+  const loginAction = async (data) => {
+    limpiarCarrito();
+    try {
+      let response = await loginU(data);
+      if (response && response.usuario) {
+        setUser({ ...response.usuario, tipo: "usuario" });
+        setToken(response.token);
+        localStorage.setItem("site", response.token);
+        //console.log("Usuario logeado:", response.usuario);
+        navigate("/dashboard");
+        return;
       }
-    })};
-  
-  /*
-  const loginAction = (data) => {
-    if (data.username === "admin" && data.password === "12345") {
-      setUser(data.username);
-      setToken(data.password);
-      localStorage.setItem("site", data.password);
-      navigate("/dashboard");
+
+      response = await loginC(data);
+      if (response && response.cliente) {
+        setUser({ ...response.cliente, tipo: "cliente" });
+        setToken(response.token);
+        localStorage.setItem("site", response.token);
+        //console.log("Cliente logeado:", response.cliente);
+        navigate("/dashboard");
+        return;
+      }
+
+      throw new Error(response.error || "Error desconocido");
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error.message);
     }
-    throw Error("Usuario no encontrado");
   };
-*/
 
   const logOut = () => {
     setUser(null);
     setToken("");
     localStorage.removeItem("site");
     limpiarCarrito();
-    navigate("/login");
+    navigate("/dashboard");
   };
 
   return (
-    <AuthContext.Provider value={{ token, user, loginAction, logOut }}>
+    <AuthContext.Provider value={{ user, token, loginAction, logOut }}>
       {children}
     </AuthContext.Provider>
   );
@@ -72,7 +80,7 @@ const AuthProvider = ({ children }) => {
 
 export default AuthProvider;
 
-//Hook personalizado
+// Hook personalizado
 export const useAuth = () => {
   return useContext(AuthContext);
 };
