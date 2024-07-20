@@ -51,9 +51,9 @@ const NavBar = () => {
                   <div>Administrar</div>
                   {dropdownVisible && (
                     <ul className="dropdown-menu">
-                      <li onMouseEnter={() => handleSubmenuEnter('registrar')} onMouseLeave={handleSubmenuLeave}>
+                      <li onMouseEnter={() => handleSubmenuEnter('Registrar')} onMouseLeave={handleSubmenuLeave}>
                         Registrar
-                        {submenuVisible === 'registrar' && (
+                        {submenuVisible === 'Registrar' && (
                           <ul className="submenu">
                             <li><NavLink to="/register/material">Material</NavLink></li>
                             <li><NavLink to="/register/categoria">Categoría</NavLink></li>
@@ -61,40 +61,29 @@ const NavBar = () => {
                           </ul>
                         )}
                       </li>
-                      <li onMouseEnter={() => handleSubmenuEnter('consultar')} onMouseLeave={handleSubmenuLeave}>
+                      <li onMouseEnter={() => handleSubmenuEnter('Consultar')} onMouseLeave={handleSubmenuLeave}>
                         Consultar
-                        {submenuVisible === 'consultar' && (
+                        {submenuVisible === 'Consultar' && (
                           <ul className="submenu">
-                            <li><NavLink to="/consultar/producto">Producto</NavLink></li>
-                            <li><NavLink to="/consultar/material">Material</NavLink></li>
-                            <li><NavLink to="/consultar/usuario">Usuario</NavLink></li>
-                            <li><NavLink to="/consultar/factura">Factura</NavLink></li>
-                            <li><NavLink to="/consultar/categoria">Categoría</NavLink></li>
-                            <li><NavLink to="/consultar/detalle-factura">Detalle Factura</NavLink></li>
+                            <li><NavLink to="/list/productos">Productos</NavLink></li>
+                            <li><NavLink to="/list/facturas">Facturas</NavLink></li>
+                            <li><NavLink to="/list/clients">Clientes</NavLink></li>
                           </ul>
                         )}
                       </li>
-                      <li onMouseEnter={() => handleSubmenuEnter('eliminar')} onMouseLeave={handleSubmenuLeave}>
-                        Eliminar
-                        {submenuVisible === 'eliminar' && (
-                          <ul className="submenu">
-                            <li><NavLink to="/eliminar/producto">Producto</NavLink></li>
-                            <li><NavLink to="/eliminar/material">Material</NavLink></li>
-                            <li><NavLink to="/eliminar/usuario">Usuario</NavLink></li>
-                            <li><NavLink to="/eliminar/categoria">Categoría</NavLink></li>
-                          </ul>
-                        )}
-                      </li>
+
+
+
+
+
+
+
                     </ul>
                   )}
                 </li>
-
               )}
               <li style={{ margin: '0px 0px 0px 10px' }}>
                 <NavLink to="/Categorias">Categorías</NavLink>
-              </li>
-              <li>
-                <NavLink to="/About">About</NavLink>
               </li>
               {auth.user && (
                 <li>
@@ -105,6 +94,9 @@ const NavBar = () => {
                   )}
                 </li>
               )}
+              <li>
+                <NavLink to="/About">About</NavLink>
+              </li>
               <li>
                 {auth.user ? (
                   <a href="#" onClick={() => auth.logOut()}>Salir</a>
@@ -119,5 +111,17 @@ const NavBar = () => {
     </div>
   );
 };
-
+/**
+  <li onMouseEnter={() => handleSubmenuEnter('Modificar')} onMouseLeave={handleSubmenuLeave}>
+                        Modificar
+                        {submenuVisible === 'Modificar' && (
+                          <ul className="submenu">
+                            <li><NavLink to="/update/producto">Producto</NavLink></li>
+                            <li><NavLink to="/update/material">Material</NavLink></li>
+                            <li><NavLink to="/update/usuario">Usuario</NavLink></li>
+                            <li><NavLink to="/update/categoria">Categoría</NavLink></li>
+                          </ul>
+                        )}
+                      </li>
+ */
 export default NavBar;

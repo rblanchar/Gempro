@@ -61,7 +61,7 @@ const Carrito = () => {
                     </td>
                     <td>
                       <img
-                        className="imagenProdSelecionado"
+                        className="imagenProdSelecionadoP"
                         src={producto.imageUrl}
                         alt={producto.productName}
                       />

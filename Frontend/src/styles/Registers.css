@@ -1,5 +1,5 @@
 .backgroundRM {
-  background-image: url('../../imagenes/fondo_inicio.png');
+  background-image: url('../../public/imagenes/fondo_inicio.png');
   height: 100%;
   background-position: center;
   display: flex;
@@ -11,7 +11,7 @@
 }
 
 .backgroundRP {
-  background-image: url('../../imagenes/fondo_inicio.png');
+  background-image: url('../../public/imagenes/fondo_inicio.png');
   height: 100%;
   background-position: center;
   display: flex;
@@ -23,7 +23,7 @@
 }
 
 .backgroundRU {
-  background-image: url('../../imagenes/fondo_inicio.png');
+  background-image: url('../../public/imagenes/fondo_inicio.png');
   height: 40%;
   background-position: center;
   display: flex;
@@ -34,7 +34,7 @@
   height: 92.8vh;
 }
 .backgroundRCli {
-  background-image: url('../../imagenes/fondo_inicio.png');
+  background-image: url('../../public/imagenes/fondo_inicio.png');
   height: 30%;
   background-position: center;
   display: flex;
@@ -139,4 +139,19 @@
 
 .btn-submit:hover {
   background-color: #f4a20a;
+}
+.combobox {
+  width: 100%;
+  padding: 1px;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  height: 10%;
+}
+#id_material.combobox,
+#id_categoria.combobox{
+  padding: 1px;
+  margin-top: 1px;
+  margin-bottom: 5px;
 }

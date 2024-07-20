@@ -1,11 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const producto = require('../services/producto');
-//const verificarToken = require('../services/authMiddleware');
+const verificarToken = require('../services/authMiddleware');
 
 router.get('/', /*verificarToken,*/ async function(req, res, next) {
   try {
     res.json(await producto.getMultiple(req.query.page));
+  } catch (err) {
+    console.error(`Error while getting Product `, err.message);
+    next(err);
+  }
+});
+
+router.get('/personalizado', verificarToken, async function(req, res, next) {
+  try {
+    res.json(await producto.getMultiplePersonalizado(req.query.page));
   } catch (err) {
     console.error(`Error while getting Product `, err.message);
     next(err);

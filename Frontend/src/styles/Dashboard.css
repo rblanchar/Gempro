@@ -21,17 +21,6 @@
     width: 300px;
 }
 
-.container2 {
-    background-image: url('../../imagenes/masVendidos/arbolVida.gif');
-}
-
-.container3 {
-    background-image: url('../../imagenes/masVendidos/Cristo.jpg');
-}
-
-.container4 {
-    background-image: url('../../imagenes/masVendidos/ancla.gif');
-}
 
 .titleH3 {
     margin-left: 145px; /* Ajusta el valor para moverlo más a la derecha */
@@ -83,9 +72,13 @@
     margin-right: 10px;
 }
 
-.social-icons img {
-    width: 24px;
-    height: 24px;
+.social-icons-img {
+    background-color: transparent;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    justify-content: space-between;
+    margin-right: 10px;
 }
 /* Imagen de descuento */
 
@@ -93,6 +86,7 @@
     max-width: 100%;
     height: auto;
     margin-bottom: 570px;
+    
 }
 
 /* Imagen de publicidad 1 */
@@ -122,7 +116,7 @@
 }
 
 .columna-1 {
-    background-image: url('../../imagenes/DashboardImagenes/Publicidad1.png');
+    background-image: url('../../public/imagenes/DashboardImagenes/Publicidad1.png');
     height: 600px;
     background-size: cover;
     background-position: center;
@@ -131,14 +125,14 @@
 .columna-2 {
     width: 40%;
     height: 400px;
-    background-image: url('../../imagenes/DashboardImagenes/Publicidad2.jpg');
+    background-image: url('../../public/imagenes/DashboardImagenes/Publicidad2.jpg');
     background-size: cover;
     background-position: center;
 }
 
 
 .imagePublicidad2-container {
-    background-image: url('../../imagenes/DashboardImagenes/Publicidad6.png');
+    background-image: url('../../public/imagenes/DashboardImagenes/Publicidad6.png');
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -176,7 +170,7 @@
 }
 
 .columna-3 {
-    background-image: url('../../imagenes/DashboardImagenes/Publicidad8.png');
+    background-image: url('../../public/imagenes/DashboardImagenes/Publicidad8.png');
     height: 400px; 
 }
 
@@ -185,5 +179,5 @@
     width: 40%; 
     
     height: 800px;
-    background-image: url('../../imagenes/DashboardImagenes/Publicidad9.png');
+    background-image: url('../../public/imagenes/DashboardImagenes/Publicidad9.png');
 }

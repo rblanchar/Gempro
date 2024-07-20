@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../AuthProvider";
 import Navbar from "../components/NavBar";
 import "../styles/Registers.css";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const RegisterProduct = () => {
     const [producto, setProducto] = useState({
@@ -15,6 +17,7 @@ const RegisterProduct = () => {
     });
     const [categorias, setCategorias] = useState([]);
     const [materiales, setMateriales] = useState([]);
+    const navigate = useNavigate();
 
     const [mensaje, setMensaje] = useState("");
     const auth = useAuth();
@@ -57,6 +60,9 @@ const RegisterProduct = () => {
                 if (response.ok) {
                     const data = await response.json();
                     setMateriales(data.data);
+
+                    
+
                 } else {
                     throw new Error("Error al cargar los materiales");
                 }
@@ -103,6 +109,14 @@ const RegisterProduct = () => {
                         id_material: "",
 
                     });
+                    Swal.fire({
+                        //title: "Material registrado con Éxito!",
+                        text: "Producto registrado con Éxito!",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then(() => {
+                        navigate("/register/producto");
+                    });
                 } else {
                     setMensaje(data.message || "Error al registrar el producto");
                 }
@@ -128,7 +142,7 @@ const RegisterProduct = () => {
             <Navbar />
             <div className="backgroundRP">
                 <div className="containerRM">
-                    <div id="mensaje">{mensaje}</div>
+                    {/*<div id="mensaje">{mensaje}</div>*/}
                     <h2>Registrar Producto</h2>
                     <form id="datos" onSubmit={handleSubmitEvent}>
                         <div className="form_controlRM">
@@ -187,37 +201,42 @@ const RegisterProduct = () => {
                         </div>
                         <div className="form_controlRM">
                             <label htmlFor="id_categoria">Categoría:</label>
-                            <select
-                                id="id_categoria"
-                                name="id_categoria"
-                                value={producto.id_categoria}
-                                onChange={handleInput}
-                            >
-                                <option value="">Seleccionar categoría</option>
-                                {categorias.map((categoria) => (
-                                    <option key={categoria.ID_CATEGORIA} value={categoria.ID_CATEGORIA}>
-                                        {categoria.NOMBRE}
-                                    </option>
-                                ))}
-                            </select>
+                            <div style={{ width: '100%' }}>
+                                <select
+                                    id="id_categoria"
+                                    name="id_categoria"
+                                    className="combobox"
+                                    value={producto.id_categoria}
+                                    onChange={handleInput}
+                                >
+                                    <option value="">Seleccionar categoría</option>
+                                    {categorias.map((categoria) => (
+                                        <option key={categoria.ID_CATEGORIA} value={categoria.ID_CATEGORIA}>
+                                            {categoria.NOMBRE}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
                         <div className="form_controlRM">
                             <label htmlFor="id_material">Material:</label>
-                            <select
-                                id="id_material"
-                                name="id_material"
-                                value={producto.id_material}
-                                onChange={handleInput}
-                            >
-                                <option value="">Seleccionar material</option>
-                                {materiales.map((material) => (
-                                    <option key={material.ID_MATERIAL} value={material.ID_MATERIAL}>
-                                        {material.NOMBRE}
-                                    </option>
-                                ))}
-                            </select>
+                            <div style={{ width: '100%' }}>
+                                <select
+                                    id="id_material"
+                                    name="id_material"
+                                    className="combobox"
+                                    value={producto.id_material}
+                                    onChange={handleInput}
+                                >
+                                    <option value="">Seleccionar material</option>
+                                    {materiales.map((material) => (
+                                        <option key={material.ID_MATERIAL} value={material.ID_MATERIAL}>
+                                            {material.NOMBRE}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
-
                         <button className="btn-submitRM">Registrar Producto</button>
                     </form>
                 </div>

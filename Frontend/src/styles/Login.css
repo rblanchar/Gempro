@@ -4,7 +4,7 @@ body {
 }
 
 .backgroundLG {
-    background-image: url('../../imagenes/fondo_inicio.png');
+    background-image: url('../../public/imagenes/fondo_inicio.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

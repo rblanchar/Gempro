@@ -24,6 +24,9 @@ import ProductosDijesOro from "./pages/ProductosDijesOro";
 import ProductosDijesPlata from "./pages/ProductosDijesPlata";
 import ProductosAretesOro from "./pages/ProductosAretesOro";
 import ProductoSeleccionado from "./pages/ProductoSeleccionado";
+import ListProducts from "./pages/ListProducts";
+import ListFacturas from "./pages/ListFacturas";
+import ListClients from "./pages/ListClients";
 import Carrito from "./pages/Carrito";
 import RegisterFactura from "./pages/RegisterFactura";
 import './styles/Login.css';
@@ -59,6 +62,9 @@ function App() {
               <Route path="/register/producto" element={<RegisterProduct />} />
               <Route path="/register/usuario" element={<RegisterUsuario />} />
               <Route path="/register/factura" element={<RegisterFactura />} />
+              <Route path="/list/productos" element={<ListProducts />} />
+              <Route path="/list/facturas" element={<ListFacturas />} />
+              <Route path="/list/clients" element={<ListClients />} />
               <Route path="/carrito" element={<Carrito />} />
             </Route>
           </Routes>

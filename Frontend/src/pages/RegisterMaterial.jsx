@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { useAuth } from "../AuthProvider";
 import Navbar from "../components/NavBar";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import '../styles/Registers.css';
 
 const RegisterMaterial = () => {
     const [material, setMaterial] = useState({ nombre: "" });
     const [mensaje, setMensaje] = useState("");
+    const navigate = useNavigate();
     const auth = useAuth();
 
     const handleSubmitEvent = async (e) => {
@@ -24,6 +27,16 @@ const RegisterMaterial = () => {
                 if (response.ok) {
                     setMensaje(data.message);
                     setMaterial({ nombre: "" });
+
+                    Swal.fire({
+                        //title: "Material registrado con Éxito!",
+                        text: "Material registrado con Éxito!",
+                        icon: "success",
+                        confirmButtonText: "OK"
+                    }).then(() => {
+                        navigate("/register/material");
+                    });
+
                 } else {
                     setMensaje(data.message || "Error al registrar el material");
                 }
@@ -49,7 +62,7 @@ const RegisterMaterial = () => {
             <Navbar />
             <div className="backgroundRM">
                 <div className="containerRM">
-                <div id="mensaje">{mensaje}</div>
+                    <div id="mensaje">{mensaje}</div>
                     <h2>Registro de Materiales</h2>
                     <form id="datos" onSubmit={handleSubmitEvent}>
                         <div className="form_controlRM">
@@ -61,7 +74,7 @@ const RegisterMaterial = () => {
                                 value={material.nombre}
                                 onChange={handleInput}
                             />
-                        </div>                       
+                        </div>
                         <button className="btn-submitRM">Registrar Material</button>
                     </form>
                 </div>

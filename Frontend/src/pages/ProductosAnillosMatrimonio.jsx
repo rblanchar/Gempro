@@ -44,7 +44,7 @@ const ProductosAnillosMatrimonio = () => {
               producto.COSTO, producto.CANTIDAD, producto.MARGEN_GANANCIA)}
           >
             <img 
-              className="imagenProdSelecionado" 
+              className="imagenProdSelecionadoP" 
               src={`${process.env.REACT_APP_URL_IMG}${producto.IMAGEN}`} 
               alt={producto.DESCRIPCION} 
             />

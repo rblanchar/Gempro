@@ -49,7 +49,7 @@ const ProductosRelojesDeportivos = () => {
             )}
           >
             <img 
-              className="imagenProdSelecionado" 
+              className="imagenProdSelecionadoP" 
               src={`${process.env.REACT_APP_URL_IMG}${producto.IMAGEN}`} 
               alt={producto.DESCRIPCION} 
             />

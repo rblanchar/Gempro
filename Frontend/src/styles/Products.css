@@ -14,7 +14,6 @@
 }
 
 .opcionPROD {
-    /*background-color: #eee8cf;*/
     padding: 10px;
     margin: 50px;
     border-radius: 8px;
@@ -117,6 +116,21 @@
     flex-direction: column;
     align-items: center;
 }
+/*por categorias, solo efecto de seleccion*/
+.imagenProdSelecionadoP {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+    margin: 10px auto;
+    transition: transform 0.3s ease;
+}
+.imagenProdSelecionadoP:hover{
+    transform: scale(1.03);
+}
+
 
 .imagenProdSelecionado {
     width: 200px;
@@ -126,8 +140,13 @@
     background-position: center;
     border-radius: 8px;
     margin: 10px auto;
+    transition: transform 0.8s ease; /* Agregamos una transición suave */
 }
 
+ .imagenProdSelecionado:hover {
+   
+    transform: scale(2.0) translate(0%, 15%);
+} 
 .carritoContainer {
     display: flex;
     justify-content: space-between;

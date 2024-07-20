@@ -89,7 +89,7 @@ const RegisterFactura = () => {
                     //navigate("/dashboard");
                     Swal.fire({
                         title: "Compra realizada con Éxito!",
-                        text: "Gracias por su compra.",
+                        text: "Su pedido será entregado en Max 48 horas",
                         icon: "success",
                         confirmButtonText: "OK"
                     }).then(() => {

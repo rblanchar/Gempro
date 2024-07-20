@@ -40,37 +40,61 @@
     padding: 5px;
     border-radius: 5px;
 }
-
+/*categorias y su respectiva imagen*/
 .relojesD {
-    background-image: url('../../imagenes/Reloj/deportivo/Principal.jpg');
+    background-image: url('../../public/imagenes/Reloj/deportivo/Militar.jpg');
+    transition: transform 0.3s ease; 
 }
 .relojesF {
-    background-image: url('../../imagenes/Reloj/formal/principal.jpg');
+    background-image: url('../../public/imagenes/Reloj/formal/principal.jpg');
+    transition: transform 0.3s ease; 
 }
 .cadenasO {
-    background-image: url('../../imagenes/Cadenas/oro/Principal.jpg');
+    background-image: url('../../public/imagenes/Cadenas/oro/Principal.jpg');
+    transition: transform 0.3s ease; 
 }
 .cadenasP {
-    background-image: url('../../imagenes/Cadenas/plata/principal.jpg');
+    background-image: url('../../public/imagenes/Cadenas/plata/principal.jpg');
+    transition: transform 0.3s ease;
 }
 .pulseras {
-    background-image: url('../../imagenes/Pulseras/Oro/principal.jpg');
+    background-image: url('../../public/imagenes/Pulseras/Oro/principal.jpg');
+    transition: transform 0.3s ease;
 }
-
 .anillosSolitarios {
-    background-image: url('../../imagenes/AnilloSolitarios/piedras/principal.jpg');
+    background-image: url('../../public/imagenes/AnilloSolitarios/piedras/principal.jpg');
+    transition: transform 0.3s ease;
 }
 
 .anillosMatrimonio {
-    background-image: url('../../imagenes/AnillosdeMatrimonio/principal.jpg');
+    background-image: url('../../public/imagenes/AnillosdeMatrimonio/principal.jpg');
+    transition: transform 0.3s ease;
 }
 
 .dijesO {
-    background-image: url('../../imagenes/Dijes/oro/principal.jpg');
+    background-image: url('../../public/imagenes/Dijes/oro/principal.jpg');
+    transition: transform 0.3s ease;
 }
 .dijesP {
-    background-image: url('../../imagenes/Dijes/plata/principal.jpg');
+    background-image: url('../../public/imagenes/Dijes/plata/principal.jpg');
+    transition: transform 0.3s ease;
 }
 .aretes {
-    background-image: url('../../imagenes/Aretes/oro/principal.jpeg');
+    background-image: url('../../public/imagenes/Aretes/oro/principal.jpeg');
+    transition: transform 0.3s ease;
 }
+
+/*categorias:hover*/
+.relojesD:hover,
+.relojesF:hover,
+.cadenasO:hover,
+.cadenasP:hover,
+.pulseras:hover,
+.anillosSolitarios:hover,
+.anillosMatrimonio:hover,
+.dijesO:hover,
+.dijesP:hover,
+.aretes:hover{
+    transform: scale(1.03);
+}
+/**/

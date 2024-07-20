@@ -2,6 +2,7 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
+/*
 async function getMultiple(page = 1){
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
@@ -14,6 +15,17 @@ async function getMultiple(page = 1){
     data,
     //meta
   }
+}
+  */
+async function getMultiple() {
+  const rows = await db.query(
+    `SELECT * FROM categoria_productos ORDER BY id_categoria`, []
+  );
+  const data = helper.emptyOrRows(rows.rows);
+
+  return {
+    data
+  };
 }
 
 async function create(categoria) {

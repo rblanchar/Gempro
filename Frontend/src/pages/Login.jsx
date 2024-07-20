@@ -12,11 +12,19 @@ const Login = () => {
   const [mensaje, setMensaje] = useState("");
   const { loginAction } = useAuth();
 
-  const handleSubmitEvent = (e) => {
+  const handleSubmitEvent = async (e) => {
     e.preventDefault();
     if (input.username !== "" && input.password !== "") {
-      setMensaje("Usuario y contraseña incorrectos");
-      loginAction(input);
+      try {
+        const response = await loginAction(input);
+        if (response.success) {
+          setMensaje("");
+        } else {
+          setMensaje("Usuario y contraseña incorrectos");
+        }
+      } catch (error) {
+        setMensaje("Error en el inicio de sesión");
+      }
       return;
     }
     alert("El usuario y la contraseña son obligatorios");
@@ -67,7 +75,7 @@ const Login = () => {
             <div className="registrarse">
               ¿Aún no tienes una cuenta?
               <NavLink to="/register/cliente" className="enlace">
-                <span className="negrita">  Registrarse</span>
+                <span className="negrita"> Registrarse</span>
               </NavLink>
             </div>
             <button className="btn-submitLG">Iniciar sesión</button>

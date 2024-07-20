@@ -32,6 +32,7 @@ app.use("/material",materialRouter);
 app.use("/usuario",usuarioRouter);
 app.use("/categoria",categoriaRouter);
 app.use("/producto",productoRouter);
+
 app.use("/tipo_usuario",tipoUsuarioRouter);
 app.use("/cliente",clienteRouter);
 app.use("/factura",facturaRouter);

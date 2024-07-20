@@ -8,7 +8,7 @@ const dbm= require('../Models/config-db');
 const jwt = require("jsonwebtoken");
 const { DATE } = require('oracledb');*/
 
-async function getMultiple(page = 1) {
+async function getMultiple(page = 2) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
     `SELECT f.id_factura,f.fecha,c.cedula,c.nombre,c.apellidos,u.nombre_usuario,f.subtotal,f.total_pagar

@@ -12,7 +12,23 @@ async function getMultiple() {
     data
   };
 }
+async function getMultiplePersonalizado() {
+  const rows = await db.query(
+    `select p.id_producto, p.descripcion, ((p.costo * p.margen_ganancia) + p.costo) as valor_unitario, p.cantidad, 
+      c.nombre as categoria, m.nombre as material, p.imagen 
+      from productos p
+      join categoria_productos c
+      on p.id_categoria = c.id_categoria
+      join materiales m
+      on p.id_material = m.id_material
+      order by p.id_producto`, []
+  );
+  const data = helper.emptyOrRows(rows.rows);
 
+  return {
+    data
+  };
+}
 
 async function create(producto) {
   const sql = `
@@ -91,7 +107,8 @@ async function remove(id_producto) {
 
 module.exports = {
   getMultiple,
-  create, 
+  getMultiplePersonalizado,
+  create,
   update,
   remove,
 }

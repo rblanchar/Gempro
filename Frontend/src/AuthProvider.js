@@ -35,16 +35,14 @@ const AuthProvider = ({ children }) => {
   const { limpiarCarrito } = useCarrito();
 
   const loginAction = async (data) => {
-    limpiarCarrito();
     try {
       let response = await loginU(data);
       if (response && response.usuario) {
         setUser({ ...response.usuario, tipo: "usuario" });
         setToken(response.token);
         localStorage.setItem("site", response.token);
-        console.log("Usuario logeado:", response.usuario);
         navigate("/dashboard");
-        return;
+        return { success: true };
       }
 
       response = await loginC(data);
@@ -52,14 +50,14 @@ const AuthProvider = ({ children }) => {
         setUser({ ...response.cliente, tipo: "cliente" });
         setToken(response.token);
         localStorage.setItem("site", response.token);
-        console.log("Cliente logeado:", response.cliente);
         navigate("/dashboard");
-        return;
+        return { success: true };
       }
 
       throw new Error(response.error || "Error desconocido");
     } catch (error) {
       console.error("Error al iniciar sesión:", error.message);
+      return { success: false };
     }
   };
 
